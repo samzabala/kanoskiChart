@@ -43,9 +43,28 @@
 		})
 
 
+		var colorPalette = {
+			"chevrolet" : '#f49445',
+			"ford": '#ee2b2a',
+			"honda": '#4d1e41',
+			"toyota": '#a6b9dd',
+			"nissan": '#737fb9',
+			"dodge": '#f16038',
+			"gmc": '#832339',
+			"jeep": '#3f4494',
+			"hyundai":  '#21255c'
+		};
+
 
 		colors = d3.scaleOrdinal()
-			.range(['#17194c','#3e4299','#f57f20','#ef4423'])
+			.range((function(){
+				var range = [];
+				Object.keys(colorPalette).forEach(function(make){
+					range.push( colorPalette[make]);
+				})
+
+				return range;
+			})())
 			.domain(data.reduce(function(acc,d){
 				if(!acc.includes(d.Make)){
 					acc.push(d.Make);
