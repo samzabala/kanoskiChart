@@ -126,6 +126,7 @@ body {
                 .style("background-color", backgroundColor)
                 .style("max-width", '100%')
                 .style("margin", '0 auto')
+                .style("display", 'block')
                 .attr('version','1.1')
                 .attr('x','0px')
                 .attr('y','0px')
