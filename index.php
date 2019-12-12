@@ -241,14 +241,11 @@ body {
                           return html;
                         });
                     repositionToolTip(event.pageX,event.pageY);
-                    console.log('enter');
                   })
                   .on("mousemove", function(){
-                    console.log('move');
                     repositionToolTip(event.pageX,event.pageY);
                   })
                   .on('mouseleave', function(d){
-                    console.log('leave');
                     tooltip
                       .style("display", "none")
                       .select('.tooltip-content')
@@ -302,7 +299,6 @@ body {
             .done(function(){
               d3.csv(csvUrl,function(d){
                 return d;
-                console.log(d);
               })
               .then(kanoskiChart)
             })
