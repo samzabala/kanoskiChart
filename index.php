@@ -47,7 +47,7 @@ body {
         if(isIE()){
           var error =  document.createElement('div')
           error.className = prefix+'wrapper fatality';
-          error.innerHTML = 'Sorry, this graphic needs D3 to render the data but your browser does not support it.<br><br> Newer versions of Chrome, Edge, Firefox and Safari are recommended. <br><br>See <em><a target="_blank" rel="nofollow" href="https://d3-wiki.readthedocs.io/zh_CN/master/Home/#browser-platform-support">the official wiki</a></em> for more information';
+          error.innerHTML = 'Sorry, this graphic needs D3 to render the data but your browser does not support it.\n\n Newer versions of Chrome, Edge, Firefox and Safari are recommended. \n\nSee <em><a target="_blank" rel="nofollow" href="https://d3-wiki.readthedocs.io/zh_CN/master/Home/#browser-platform-support">the official wiki</a></em> for more information';
 
           document.getElementById('kanoski-chart').appendChild(error);
           
@@ -55,8 +55,8 @@ body {
           throw new Error('D3 not supported by browser');
         }
         //give the src of csv data here
-        // const csvUrl = 'https://www.kanoski.com/wp-content/uploads/2019/12/DeadliestCarstop25.csv';
-        const csvUrl = 'data.csv';
+        const csvUrl = 'https://www.kanoski.com/wp-content/uploads/2019/12/DeadliestCarstop25.csv';
+        // const csvUrl = 'data.csv';
 
         //make the chart here
         function kanoskiChart(data){
@@ -125,6 +125,7 @@ body {
                 .style("font", "inherit")
                 .style("background-color", backgroundColor)
                 .style("max-width", '100%')
+                .style("margin", '0 auto')
                 .attr('version','1.1')
                 .attr('x','0px')
                 .attr('y','0px')
